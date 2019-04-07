@@ -7,12 +7,13 @@ namespace Etapa1
     {
         static void Main(string[] args)
         {
-            var escuela=new Escuela("Platzi Academy",2019){
-                Pais="México",
-                Ciudad="Guadalajara"
-                };
+            var escuela = new Escuela("Platzi Academy", 2019)
+            {
+                Pais = "México",
+                Ciudad = "Guadalajara"
+            };
 
-            var arregloCurso=new Curso[3];
+            var arregloCurso = new Curso[3];
             arregloCurso[0] = new Curso()
             {
                 Nombre = "101"
@@ -23,25 +24,59 @@ namespace Etapa1
             {
                 Nombre = "201"
             };
-            arregloCurso[1]=cursoSegundo;
+            arregloCurso[1] = cursoSegundo;
 
-            arregloCurso[2]= new Curso
+            arregloCurso[2] = new Curso
             {
                 Nombre = "301"
             };
 
             System.Console.WriteLine("==============");
-
-            ImprimirCursosWhile(arregloCurso);
+            ImprimirCursos_While(arregloCurso);
+            System.Console.WriteLine("==============");
+            ImprimirCursos_DoWhile(arregloCurso);
+            System.Console.WriteLine("==============");
+            ImprimirCursos_For(arregloCurso);
+            System.Console.WriteLine("==============");
+            ImprimirCursos_ForEach(arregloCurso);
         }
 
-        private static void ImprimirCursosWhile(Curso[] arregloCurso)
+        private static void ImprimirCursos_ForEach(Curso[] arregloCurso)
         {
-            int contador=0;
-            while (contador<arregloCurso.Length)
+            foreach (var curso in arregloCurso)
             {
-                var current=arregloCurso[contador];
-                System.Console.WriteLine($"Nombre:{current.Nombre}, Id:{current.UniqueId}");
+                System.Console.WriteLine($"Nombre:{curso.Nombre}, Id:{curso.UniqueId}");
+            }
+        }
+
+        private static void ImprimirCursos_For(Curso[] arregloCurso)
+        {
+            for (int i = 0; i < arregloCurso.Length; i++)
+            {
+                var curso=arregloCurso[i];
+                System.Console.WriteLine($"Nombre:{curso.Nombre}, Id:{curso.UniqueId}");
+            }
+        }
+
+        private static void ImprimirCursos_DoWhile(Curso[] arregloCurso)
+        {
+            int contador = 0;
+            do
+            {
+                var curso = arregloCurso[contador];
+                System.Console.WriteLine($"Nombre:{curso.Nombre}, Id:{curso.UniqueId}");
+                // contador=contador+1;
+                // contador+=1;
+                contador++;
+            } while (contador < arregloCurso.Length);
+        }
+        private static void ImprimirCursos_While(Curso[] arregloCurso)
+        {
+            int contador = 0;
+            while (contador < arregloCurso.Length)
+            {
+                var curso = arregloCurso[contador];
+                System.Console.WriteLine($"Nombre:{curso.Nombre}, Id:{curso.UniqueId}");
                 // contador=contador+1;
                 // contador+=1;
                 contador++;
