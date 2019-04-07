@@ -13,7 +13,6 @@ namespace Etapa1
         {
             var engine=new EscuelaEngine();
             Printer.EscribirTitulo("Bienvenido a la escuela");
-            Printer.Beepi();
             ImprimirCursosEscuela(engine.Escuela);
         }
         private static void ImprimirCursosEscuela(Escuela escuela)
