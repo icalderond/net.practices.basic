@@ -13,23 +13,12 @@ namespace Etapa1
                 Ciudad = "Guadalajara"
             };
 
-            var arregloCurso = new Curso[3];
-            arregloCurso[0] = new Curso()
-            {
-                Nombre = "101"
+            Curso[] arregloCurso = {
+                new Curso() {Nombre = "101"},
+                new Curso(){Nombre = "201"},
+                new Curso(){Nombre = "301"}
             };
 
-
-            var cursoSegundo = new Curso()
-            {
-                Nombre = "201"
-            };
-            arregloCurso[1] = cursoSegundo;
-
-            arregloCurso[2] = new Curso
-            {
-                Nombre = "301"
-            };
 
             System.Console.WriteLine("==============");
             ImprimirCursos_While(arregloCurso);
@@ -53,7 +42,7 @@ namespace Etapa1
         {
             for (int i = 0; i < arregloCurso.Length; i++)
             {
-                var curso=arregloCurso[i];
+                var curso = arregloCurso[i];
                 System.Console.WriteLine($"Nombre:{curso.Nombre}, Id:{curso.UniqueId}");
             }
         }
