@@ -53,9 +53,6 @@ namespace Etapa1
             return cursoObj.Nombre.Contains("301");
         }
 
-        ///<SUMARY>
-        ///
-        ///
         private static void ImprimirCursosEscuela(Escuela escuela)
         {
             WriteLine("======================");
