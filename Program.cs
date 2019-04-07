@@ -1,5 +1,6 @@
 ﻿using System;
 using CoreEscuela.Entidades;
+using static System.Console;
 
 namespace Etapa1
 {
@@ -13,28 +14,36 @@ namespace Etapa1
                 Ciudad = "Guadalajara"
             };
 
-            Curso[] arregloCurso = {
+            escuela.Cursos = new Curso[] {
                 new Curso() {Nombre = "101"},
                 new Curso(){Nombre = "201"},
                 new Curso(){Nombre = "301"}
             };
 
+            // escuela.CursosArray=null;
+            // escuela.CursosArray=new Curso[0];
+            escuela = null;
 
-            System.Console.WriteLine("==============");
-            ImprimirCursos_While(arregloCurso);
-            System.Console.WriteLine("==============");
-            ImprimirCursos_DoWhile(arregloCurso);
-            System.Console.WriteLine("==============");
-            ImprimirCursos_For(arregloCurso);
-            System.Console.WriteLine("==============");
-            ImprimirCursos_ForEach(arregloCurso);
+            ImprimirCursosEscuela(escuela);
+        }
+
+        private static void ImprimirCursosEscuela(Escuela escuela)
+        {
+            WriteLine("======================");
+            WriteLine("Cursos de la escuela");
+            WriteLine("======================");
+
+            if (escuela?.Cursos != null)
+            {
+                ImprimirCursos_ForEach(escuela.Cursos);
+            }
         }
 
         private static void ImprimirCursos_ForEach(Curso[] arregloCurso)
         {
             foreach (var curso in arregloCurso)
             {
-                System.Console.WriteLine($"Nombre:{curso.Nombre}, Id:{curso.UniqueId}");
+                WriteLine($"Nombre:{curso.Nombre}, Id:{curso.UniqueId}");
             }
         }
 
@@ -43,7 +52,7 @@ namespace Etapa1
             for (int i = 0; i < arregloCurso.Length; i++)
             {
                 var curso = arregloCurso[i];
-                System.Console.WriteLine($"Nombre:{curso.Nombre}, Id:{curso.UniqueId}");
+                WriteLine($"Nombre:{curso.Nombre}, Id:{curso.UniqueId}");
             }
         }
 
@@ -53,7 +62,7 @@ namespace Etapa1
             do
             {
                 var curso = arregloCurso[contador];
-                System.Console.WriteLine($"Nombre:{curso.Nombre}, Id:{curso.UniqueId}");
+                WriteLine($"Nombre:{curso.Nombre}, Id:{curso.UniqueId}");
                 // contador=contador+1;
                 // contador+=1;
                 contador++;
@@ -65,7 +74,7 @@ namespace Etapa1
             while (contador < arregloCurso.Length)
             {
                 var curso = arregloCurso[contador];
-                System.Console.WriteLine($"Nombre:{curso.Nombre}, Id:{curso.UniqueId}");
+                WriteLine($"Nombre:{curso.Nombre}, Id:{curso.UniqueId}");
                 // contador=contador+1;
                 // contador+=1;
                 contador++;
