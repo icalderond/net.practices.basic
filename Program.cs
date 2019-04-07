@@ -22,7 +22,7 @@ namespace Etapa1
 
             // escuela.CursosArray=null;
             // escuela.CursosArray=new Curso[0];
-            escuela = null;
+            // escuela = null;
 
             ImprimirCursosEscuela(escuela);
         }
