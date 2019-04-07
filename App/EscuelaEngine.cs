@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using CoreEscuela.Entidades;
+using CoreEscuela.Util;
 
 namespace CoreEscuela
 {

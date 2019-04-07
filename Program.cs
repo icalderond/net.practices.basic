@@ -1,8 +1,9 @@
 ﻿using System;
 using CoreEscuela.Entidades;
-using static System.Console;
 using System.Collections.Generic;
 using CoreEscuela;
+using CoreEscuela.Util;
+using static System.Console;
 
 namespace Etapa1
 {
@@ -11,13 +12,13 @@ namespace Etapa1
         static void Main(string[] args)
         {
             var engine=new EscuelaEngine();
+            Printer.EscribirTitulo("Bienvenido a la escuela");
+            Printer.Beepi();
             ImprimirCursosEscuela(engine.Escuela);
         }
         private static void ImprimirCursosEscuela(Escuela escuela)
         {
-            WriteLine("======================");
-            WriteLine("Cursos de la escuela");
-            WriteLine("======================");
+            Printer.EscribirTitulo("Cursos de la escuela");
 
             if (escuela?.Cursos != null)
             {
