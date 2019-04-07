@@ -11,9 +11,29 @@ namespace Etapa1
                 Pais="México",
                 Ciudad="Guadalajara"
                 };
-            
-            escuela.TipoEscuela=TiposEscuela.Primaria;
-           Console.WriteLine(escuela);     
+
+            var cursoPrimero = new Curso()
+            {
+                Nombre = "101"
+            };
+            var cursoSegundo = new Curso()
+            {
+                Nombre = "201"
+            };
+            var cursoTercero = new Curso()
+            {
+                Nombre = "301"
+            };
+
+            System.Console.WriteLine("==============");
+
+            var messagePrimerCurso = $"{cursoPrimero.Nombre}, {cursoPrimero.UniqueId}";
+            var messagePrimerSegundo = $"{cursoSegundo.Nombre}, {cursoSegundo.UniqueId}";
+            var messagePrimerTercero = $"{cursoTercero.Nombre}, {cursoTercero.UniqueId}";
+
+            System.Console.WriteLine(messagePrimerCurso);
+            System.Console.WriteLine(messagePrimerSegundo);
+            System.Console.WriteLine(messagePrimerTercero);
         }
     }
 }
