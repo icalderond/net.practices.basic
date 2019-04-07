@@ -35,10 +35,24 @@ namespace Etapa1
                 }
             };
 
-            escuela.Cursos.AddRange(otraColeccion);
-            // otraColeccion.Clear(); 
+            // Curso temporal = new Curso { Nombre = "101-Vacacional", Jornada = TiposJornada.Noche };
 
+            escuela.Cursos.AddRange(otraColeccion);
+            // escuela.Cursos.Add(temporal);
             ImprimirCursosEscuela(escuela);
+
+            // WriteLine($"Curso.Hash {temporal.GetHashCode()}");
+            Predicate < Curso > miAlgoritmo = Predicado;
+            escuela.Cursos.RemoveAll(Predicado);
+
+            // escuela.Cursos.Remove(temporal);
+            WriteLine("========================");
+            ImprimirCursosEscuela(escuela);
+        }
+
+        private static bool Predicado(Curso cursoObj)
+        {
+            return cursoObj.Nombre.Contains("303");
         }
 
         private static void ImprimirCursosEscuela(Escuela escuela)
