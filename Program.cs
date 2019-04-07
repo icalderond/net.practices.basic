@@ -19,11 +19,7 @@ namespace Etapa1
                 new Curso(){Nombre = "201"},
                 new Curso(){Nombre = "301"}
             };
-
-            // escuela.CursosArray=null;
-            // escuela.CursosArray=new Curso[0];
-            // escuela = null;
-
+            
             ImprimirCursosEscuela(escuela);
         }
 
