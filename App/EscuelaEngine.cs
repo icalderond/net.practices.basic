@@ -36,18 +36,34 @@ namespace CoreEscuela
 
             CargarCursos();
             CargarAsignaturas();
-
             CargarEvaluaciones();
         }
 
         private void CargarEvaluaciones()
         {
+            Random random=new Random();
+            foreach (var curso in Escuela.Cursos)
+            {
+                foreach (var alumno in curso.Alumnos)
+                {
+                    foreach (var asignatura in curso.Asignaturas)
+                    {
+                        for (int i = 0; i < 5; i++)
+                        {
+                            var eval = random.Next(0, 50) * 0.1;
+                            var evaluacion = new Evaluacion();
+                            evaluacion.Asignatura=asignatura;
+                            evaluacion.Calificacion.Add(eval);
 
+                            alumno.Evaluaciones.Add(evaluacion);
+                        }   
+                    }
+                }
+            }
         }
 
         private void CargarAsignaturas()
         {
-
             foreach (var curso in Escuela.Cursos)
             {
                 List<Asignatura> listaAsignaturas = new List<Asignatura>
